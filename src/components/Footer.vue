@@ -3,23 +3,14 @@
     <div class="container">
       <!-- footer top -->
       <div id="footer-top" class="row">
-        <div class="col-6">
-          <address v-for="(contact, index) in contactLists" :key="index">
-            <List :list="contact" />
-          </address>
-          <Social />
+        <div
+          :class="list.col"
+          v-for="(list, index) in lists"
+          :key="index + list.title"
+        >
+          <List :list="list" />
         </div>
-        <div class="col-6">
-          <div class="row">
-            <div
-              class="col-4"
-              v-for="(list, index) in lists"
-              :key="index + list.title"
-            >
-              <List :list="list" />
-            </div>
-          </div>
-        </div>
+        <Social />
       </div>
 
       <!-- footer bottom -->
@@ -47,7 +38,7 @@ export default {
   },
   data() {
     return {
-      contactLists: [
+      lists: [
         {
           title: "Address",
           items: [
@@ -56,18 +47,19 @@ export default {
             "support@maxcoach.com",
           ],
           opacity: false,
+          col: "col-6",
         },
-      ],
-      lists: [
         {
           title: "Explore",
           items: ["Start here", "Blog", "About us"],
           opacity: false,
+          col: "col-2",
         },
         {
           title: "Explore",
           items: ["Start here", "Blog", "About us"],
           opacity: true,
+          col: "col-2",
         },
         {
           title: "Information",
@@ -78,6 +70,7 @@ export default {
             "Terms of services",
           ],
           opacity: false,
+          col: "col-2",
         },
       ],
     };

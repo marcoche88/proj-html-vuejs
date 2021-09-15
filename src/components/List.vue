@@ -16,7 +16,6 @@ export default {
   name: "Lsit",
   props: {
     list: Object,
-    opacity: String,
   },
 };
 </script>
