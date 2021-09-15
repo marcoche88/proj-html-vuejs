@@ -1,6 +1,6 @@
 <template>
   <footer class="pt-5 position-relative">
-    <div class="container">
+    <div class="my-container container">
       <!-- footer top -->
       <div id="footer-top" class="row">
         <div

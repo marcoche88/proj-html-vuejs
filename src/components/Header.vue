@@ -1,11 +1,11 @@
 <template>
   <header>
-    <nav class="container h-100">
+    <nav class="my-container container h-100">
       <div class="row align-items-center h-100">
         <!-- navbar-left logo -->
         <div class="col-2">
           <img
-            class="img-fluid w-75 p-3"
+            class="img-fluid w-75 py-3 pe-3"
             src="../assets/images/dark-logo.png"
             alt="logo"
           />
@@ -70,6 +70,7 @@ export default {
 
 header {
   background-color: $bg-primary-color;
+  color: $text-tertiary-color;
   height: 55px;
 }
 
@@ -78,7 +79,6 @@ ul {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 0;
-  margin-left: 200px;
 }
 
 li {
