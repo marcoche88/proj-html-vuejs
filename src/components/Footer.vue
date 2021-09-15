@@ -4,55 +4,19 @@
       <!-- footer top -->
       <div id="footer-top" class="row">
         <div class="col-6">
-          <address>
-            <div class="title">Address</div>
-            <ul>
-              <li>382 NE 191st St # 87394 Miami, FL 33179-3899</li>
-              <li>+1(305)547-9909 (9am - 5pm EST, Monday - Friday)</li>
-              <li>support@maxcoach.com</li>
-              <li>
-                <a href="#" class="me-4"
-                  ><i class="fab fa-facebook-square fa-2x"></i
-                ></a>
-                <a href="#" class="me-4"
-                  ><i class="fab fa-twitter fa-2x"></i
-                ></a>
-                <a href="#" class="me-4"
-                  ><i class="fab fa-instagram fa-2x"></i
-                ></a>
-                <a href="#" class="me-4"
-                  ><i class="fab fa-linkedin fa-2x"></i
-                ></a>
-              </li>
-            </ul>
+          <address v-for="(contact, index) in contactLists" :key="index">
+            <List :list="contact" />
           </address>
+          <Social />
         </div>
         <div class="col-6">
           <div class="row">
-            <div class="col-4">
-              <div class="title">Explore</div>
-              <ul>
-                <li><a href="#">Start here</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">About us</a></li>
-              </ul>
-            </div>
-            <div class="col-4">
-              <div class="title opacity-0">Explore</div>
-              <ul>
-                <li><a href="#">Success story</a></li>
-                <li><a href="#">Courses</a></li>
-                <li><a href="#">Contact us</a></li>
-              </ul>
-            </div>
-            <div class="col-4">
-              <div class="title">Information</div>
-              <ul>
-                <li><a href="#">Membership</a></li>
-                <li><a href="#">Purchase guide</a></li>
-                <li><a href="#">Privacy policy</a></li>
-                <li><a href="#">Terms of services</a></li>
-              </ul>
+            <div
+              class="col-4"
+              v-for="(list, index) in lists"
+              :key="index + list.title"
+            >
+              <List :list="list" />
             </div>
           </div>
         </div>
@@ -72,8 +36,52 @@
 </template>
 
 <script>
+import List from "./List.vue";
+import Social from "./Social.vue";
+
 export default {
   name: "Footer",
+  components: {
+    List,
+    Social,
+  },
+  data() {
+    return {
+      contactLists: [
+        {
+          title: "Address",
+          items: [
+            "382 NE 191st St # 87394 Miami, FL 33179-3899",
+            "+1(305)547-9909 (9am - 5pm EST, Monday - Friday)",
+            "support@maxcoach.com",
+          ],
+          opacity: false,
+        },
+      ],
+      lists: [
+        {
+          title: "Explore",
+          items: ["Start here", "Blog", "About us"],
+          opacity: false,
+        },
+        {
+          title: "Explore",
+          items: ["Start here", "Blog", "About us"],
+          opacity: true,
+        },
+        {
+          title: "Information",
+          items: [
+            "Membership",
+            "Purchase guide",
+            "Privacy policy",
+            "Terms of services",
+          ],
+          opacity: false,
+        },
+      ],
+    };
+  },
 };
 </script>
 
@@ -82,26 +90,6 @@ export default {
 
 footer {
   color: $text-secondary-color;
-}
-
-.title {
-  color: black;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-ul {
-  padding-left: 0;
-  font-size: 12px;
-  li {
-    list-style-type: none;
-    padding: 5px 0;
-    a {
-      display: inline-block;
-      color: $text-secondary-color;
-      text-decoration: none;
-    }
-  }
 }
 
 #footer-bottom {
