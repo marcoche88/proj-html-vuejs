@@ -41,16 +41,7 @@
               </div>
             </li>
             <li>
-              <div class="input-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Search..."
-                />
-                <button type="button" class="input-group-text">
-                  <i class="fas fa-search"></i>
-                </button>
-              </div>
+              <Search />
             </li>
           </ul>
         </div>
@@ -60,8 +51,13 @@
 </template>
 
 <script>
+import Search from "./Search.vue";
+
 export default {
   name: "Header",
+  components: {
+    Search,
+  },
 };
 </script>
 
@@ -102,15 +98,5 @@ li {
     font-size: 10px;
     background-color: $text-primary-color;
   }
-}
-
-input {
-  border-right: transparent;
-}
-
-button {
-  background-color: white;
-  border-left: transparent;
-  color: $text-primary-color;
 }
 </style>
