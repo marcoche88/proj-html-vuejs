@@ -2,6 +2,7 @@
   <header>
     <nav class="container h-100">
       <div class="row align-items-center h-100">
+        <!-- navbar-left logo -->
         <div class="col-2">
           <img
             class="img-fluid w-75 p-3"
@@ -9,16 +10,14 @@
             alt="logo"
           />
         </div>
+
+        <!-- navbar-right menu -->
         <div class="col-10 h-100">
           <ul class="h-100">
-            <li>Home <i class="fas fa-chevron-down fa-xs"></i></li>
-            <li>Pages <i class="fas fa-chevron-down fa-xs"></i></li>
-            <li>Courses <i class="fas fa-chevron-down fa-xs"></i></li>
-            <li>Features <i class="fas fa-chevron-down fa-xs"></i></li>
-            <li>Blog <i class="fas fa-chevron-down fa-xs"></i></li>
-            <li>
-              <span>Shop</span>
-              <i class="fas fa-chevron-down fa-xs"></i>
+            <li v-for="(menu, index) in menus" :key="index" class="pointer">
+              {{ menu }} <i class="fas fa-chevron-down fa-xs"></i>
+            </li>
+            <li class="pointer">
               <div class="cart position-relative">
                 <i class="bi bi-cart3"></i>
                 <span
@@ -35,7 +34,7 @@
                 </span>
               </div>
             </li>
-            <li>
+            <li class="pointer">
               <div class="user rounded-circle text-center">
                 <i class="far fa-user fa-md"></i>
               </div>
@@ -57,6 +56,11 @@ export default {
   name: "Header",
   components: {
     Search,
+  },
+  data() {
+    return {
+      menus: ["Home", "Pages", "Courses", "Features", "Blog", "Shop"],
+    };
   },
 };
 </script>
@@ -90,7 +94,6 @@ li {
 
 .cart {
   display: inline-block;
-  margin-left: 10px;
   .bi-cart3 {
     font-size: 18px;
   }
