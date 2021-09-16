@@ -70,6 +70,21 @@
         </div>
       </div>
     </section>
+
+    <!-- section courses -->
+    <section id="courses" class="my-5">
+      <p class="text-center text-uppercase">Choose where you'd like to begin</p>
+      <h2 class="text-center">
+        Latest Featured <span class="text-uppercase fw-light">courses</span>
+      </h2>
+      <div class="my-container container mt-5">
+        <div class="row">
+          <div class="col-4" v-for="(course, index) in courses" :key="index">
+            <Card :course="course" />
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 </template>
 
@@ -77,15 +92,18 @@
 import MainHero from "./main/MainHero.vue";
 import Box from "./main/Box.vue";
 import CardVertical from "./main/CardVertical.vue";
+import Card from "./main/Card.vue";
 export default {
   name: "Main",
   components: {
     MainHero,
     Box,
     CardVertical,
+    Card,
   },
   data() {
     return {
+      // section coding language
       boxes: [
         {
           img: "01",
@@ -112,6 +130,7 @@ export default {
           link: "#",
         },
       ],
+      // section maxcoach
       cards: [
         {
           title: "Multiple Platforms Supported for Teaching & Studying",
@@ -129,6 +148,7 @@ export default {
           active: false,
         },
       ],
+      // section numbers
       numbers: [
         {
           data: "1.926",
@@ -147,6 +167,75 @@ export default {
           description: "Satisfaction rate",
         },
       ],
+      // section courses
+      courses: [
+        {
+          courseImg: "course-02-480x298.jpg",
+          price: "$40.00",
+          author: {
+            img: "author1.jpeg",
+            name: "Blanche Fields",
+          },
+          title: "Learning to Write as a Professional Author",
+          lessons: 20,
+          students: 50,
+        },
+        {
+          courseImg: "stock-full-hd-03-480x298.jpg",
+          price: "Free",
+          author: {
+            img: "author2.jpeg",
+            name: "Maggie Strickland",
+          },
+          title: "Customer-centric Info-Tech Strategies",
+          lessons: 24,
+          students: 769,
+        },
+        {
+          courseImg: "stock-full-hd-04-480x298.jpg",
+          price: "$19.00",
+          author: {
+            img: "author2.jpeg",
+            name: "Maggie Strickland",
+          },
+          title: "Open Programming Courses for Everyone: Python",
+          lessons: 17,
+          students: 62,
+        },
+        {
+          courseImg: "stock-full-hd-06-480x298.jpg",
+          price: "$26.00",
+          author: {
+            img: "author1.jpeg",
+            name: "Blanche Fields",
+          },
+          title: "Academic Listening and Note-taking",
+          lessons: 14,
+          students: 67,
+        },
+        {
+          courseImg: "course-featured-image-01-480x298.jpg",
+          price: "$39.00",
+          author: {
+            img: "author1.jpeg",
+            name: "Blanche Fields",
+          },
+          title: "Master jQuery in a Short Period of Time",
+          lessons: 6,
+          students: 51,
+        },
+        {
+          courseImg: "stock-full-hd-05-480x298.jpg",
+          price: "$59.00",
+          author: {
+            img: "author1.jpeg",
+            name: "Blanche Fields",
+          },
+          title: "Introduction to Javascript for Beginners",
+          lessons: 14,
+          students: 76,
+        },
+      ],
     };
   },
 };
@@ -155,7 +244,9 @@ export default {
 <style scoped lang="scss">
 @import "../scss/_vars.scss";
 
-#coding-languages {
+// section coding language and courses
+#coding-languages,
+#courses {
   p {
     font-size: 11px;
     color: $text-secondary-color;
@@ -168,6 +259,7 @@ export default {
   }
 }
 
+// section maxcoach
 #max-coach {
   .underlay {
     width: 380px;
@@ -187,6 +279,7 @@ export default {
   }
 }
 
+// section numbers
 #numbers {
   background-color: $bg-primary-color;
   h2 {
