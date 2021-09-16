@@ -44,66 +44,11 @@
                 <span class="fw-light">Stunning</span>
                 Career Perspective
               </h2>
-              <div class="card mb-4 shadow">
-                <div
-                  class="
-                    card-header
-                    active
-                    fw-bold
-                    py-3
-                    pointer
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                  "
-                >
-                  <span
-                    >Multiple Platforms Supported for Teaching & Studying</span
-                  >
-                  <i class="fas fa-minus-circle"></i>
-                </div>
-                <div class="card-body">
-                  <p class="card-text">
-                    MaxCoach supports the act of teaching and learning on
-                    multiple platforms like online or offline via material
-                    downloads. We konw things aren't supposed to be devoured in
-                    a short time, you can always access our knowledge base from
-                    any device.
-                  </p>
-                </div>
-              </div>
-              <div class="card mb-4 shadow">
-                <div
-                  class="
-                    card-header
-                    fw-bold
-                    py-3
-                    pointer
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                  "
-                >
-                  <span>Multiple Course Participation at the Same Time</span>
-                  <i class="fas fa-plus-circle"></i>
-                </div>
-              </div>
-              <div class="card mb-4 shadow">
-                <div
-                  class="
-                    card-header
-                    fw-bold
-                    py-3
-                    pointer
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                  "
-                >
-                  <span>Track Study Progress & Deliver Prompt Feedback</span>
-                  <i class="fas fa-plus-circle"></i>
-                </div>
-              </div>
+              <CardVertical
+                v-for="(card, index) in cards"
+                :key="index"
+                :card="card"
+              />
             </div>
           </div>
         </div>
@@ -115,11 +60,13 @@
 <script>
 import MainHero from "./main/MainHero.vue";
 import Box from "./main/Box.vue";
+import CardVertical from "./main/CardVertical.vue";
 export default {
   name: "Main",
   components: {
     MainHero,
     Box,
+    CardVertical,
   },
   data() {
     return {
@@ -147,6 +94,23 @@ export default {
           title: "Graphic Design",
           text: "Have a passion for graphics and arts? Show your talents with confidence and self-assertiveness.",
           link: "#",
+        },
+      ],
+      cards: [
+        {
+          title: "Multiple Platforms Supported for Teaching & Studying",
+          text: "MaxCoach supports the act of teaching and learning on multiple platforms like online or offline via material downloads. We konw things aren't supposed to be devoured in a short time, you can always access our knowledge base from any device.",
+          active: true,
+        },
+        {
+          title: "Multiple Course Participation at the Same Time",
+          text: "",
+          active: false,
+        },
+        {
+          title: "Track Study Progress & Deliver Prompt Feedback",
+          text: "",
+          active: false,
         },
       ],
     };
