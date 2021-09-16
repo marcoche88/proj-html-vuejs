@@ -17,6 +17,98 @@
         </div>
       </div>
     </section>
+
+    <!-- section maxcoach -->
+    <section id="max-coach" class="my-5">
+      <div class="my-container container">
+        <div class="row">
+          <div class="col-6 position-relative">
+            <img
+              src="../assets/images/about-us-03-image-01.png"
+              class="p-5"
+              alt="about"
+            />
+            <img
+              src="../assets/images/underlay-shape-lilla.svg"
+              alt="underlay"
+              class="underlay position-absolute"
+            />
+          </div>
+          <div class="col-6">
+            <div class="p-5">
+              <p class="text-uppercase">
+                Dream with <span class="fw-bold">maxcoach</span>
+              </p>
+              <h2 class="mt-2 mb-5">
+                Construct A
+                <span class="fw-light">Stunning</span>
+                Career Perspective
+              </h2>
+              <div class="card mb-4 shadow">
+                <div
+                  class="
+                    card-header
+                    active
+                    fw-bold
+                    py-3
+                    pointer
+                    d-flex
+                    justify-content-between
+                    align-items-center
+                  "
+                >
+                  <span
+                    >Multiple Platforms Supported for Teaching & Studying</span
+                  >
+                  <i class="fas fa-minus-circle"></i>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    MaxCoach supports the act of teaching and learning on
+                    multiple platforms like online or offline via material
+                    downloads. We konw things aren't supposed to be devoured in
+                    a short time, you can always access our knowledge base from
+                    any device.
+                  </p>
+                </div>
+              </div>
+              <div class="card mb-4 shadow">
+                <div
+                  class="
+                    card-header
+                    fw-bold
+                    py-3
+                    pointer
+                    d-flex
+                    justify-content-between
+                    align-items-center
+                  "
+                >
+                  <span>Multiple Course Participation at the Same Time</span>
+                  <i class="fas fa-plus-circle"></i>
+                </div>
+              </div>
+              <div class="card mb-4 shadow">
+                <div
+                  class="
+                    card-header
+                    fw-bold
+                    py-3
+                    pointer
+                    d-flex
+                    justify-content-between
+                    align-items-center
+                  "
+                >
+                  <span>Track Study Progress & Deliver Prompt Feedback</span>
+                  <i class="fas fa-plus-circle"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 </template>
 
@@ -75,6 +167,37 @@ export default {
     span {
       color: $text-primary-color;
     }
+  }
+}
+
+#max-coach {
+  .underlay {
+    width: 380px;
+    right: 40%;
+    bottom: 15%;
+    z-index: -1;
+  }
+  p {
+    font-size: 11px;
+    color: $text-secondary-color;
+  }
+  h2 {
+    color: $text-tertiary-color;
+    span {
+      color: $text-primary-color;
+    }
+  }
+  .card-header {
+    font-size: 11px;
+    background-color: white;
+    color: $text-secondary-color;
+    i {
+      font-size: 14px;
+    }
+  }
+  .active {
+    color: white;
+    background-color: $text-primary-color;
   }
 }
 </style>
