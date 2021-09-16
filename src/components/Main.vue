@@ -54,6 +54,22 @@
         </div>
       </div>
     </section>
+
+    <!-- section numbers -->
+    <section id="numbers">
+      <div class="my-container container py-5">
+        <div class="row align-items-center">
+          <div
+            class="col-3 text-center"
+            v-for="(number, index) in numbers"
+            :key="index"
+          >
+            <h2>{{ number.data }}</h2>
+            <p class="text-uppercase fw-bold">{{ number.description }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 </template>
 
@@ -113,6 +129,24 @@ export default {
           active: false,
         },
       ],
+      numbers: [
+        {
+          data: "1.926",
+          description: "Finished sessions",
+        },
+        {
+          data: "3.092+",
+          description: "Enrolled learners",
+        },
+        {
+          data: "200",
+          description: "Online instructors",
+        },
+        {
+          data: "100%",
+          description: "Satisfaction rate",
+        },
+      ],
     };
   },
 };
@@ -151,17 +185,16 @@ export default {
       color: $text-primary-color;
     }
   }
-  .card-header {
-    font-size: 11px;
-    background-color: white;
-    color: $text-secondary-color;
-    i {
-      font-size: 14px;
-    }
+}
+
+#numbers {
+  background-color: $bg-primary-color;
+  h2 {
+    color: $text-primary-color;
+    font-weight: bolder;
   }
-  .active {
-    color: white;
-    background-color: $text-primary-color;
+  p {
+    font-size: 11px;
   }
 }
 </style>
