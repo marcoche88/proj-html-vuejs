@@ -9,9 +9,9 @@
               Learn any coding program in distance and for a reasonable fee. You
               don't have to struggle alone, you've got our assistance and help.
             </p>
-            <button type="button" class="btn px-4 py-2">
+            <Button>
               <i class="fas fa-download"></i> Download free E-book
-            </button>
+            </Button>
           </div>
         </div>
         <div class="col-6 h-100 text-end">
@@ -28,8 +28,13 @@
 </template>
 
 <script>
+import Button from "./Button.vue";
+
 export default {
   name: "MainHero",
+  components: {
+    Button,
+  },
 };
 </script>
 
@@ -46,12 +51,6 @@ export default {
   p {
     font-size: 11px;
     line-height: 20px;
-  }
-  button {
-    font-size: 11px;
-    font-weight: bold;
-    color: white;
-    background-color: $text-primary-color;
   }
 
   .wave {

@@ -83,6 +83,9 @@
             <Card :course="course" />
           </div>
         </div>
+        <div class="all-courses text-center">
+          <Button> View all courses <i class="fas fa-arrow-right"></i></Button>
+        </div>
       </div>
     </section>
   </main>
@@ -93,6 +96,7 @@ import MainHero from "./main/MainHero.vue";
 import Box from "./main/Box.vue";
 import CardVertical from "./main/CardVertical.vue";
 import Card from "./main/Card.vue";
+import Button from "./main/Button.vue";
 export default {
   name: "Main",
   components: {
@@ -100,6 +104,7 @@ export default {
     Box,
     CardVertical,
     Card,
+    Button,
   },
   data() {
     return {
