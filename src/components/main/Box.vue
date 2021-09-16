@@ -1,6 +1,6 @@
 <template>
   <div class="card border-0">
-    <img :src="ImgUrl" class="img-fluid px-5" :alt="box.title" />
+    <img :src="ImgUrl" :alt="box.title" />
     <div class="card-body text-center">
       <h6 class="card-title mb-3">{{ box.title }}</h6>
       <p class="card-text">{{ box.text }}</p>
@@ -27,7 +27,9 @@ export default {
 @import "../../scss/_vars.scss";
 
 img {
-  max-height: 130px;
+  object-fit: contain;
+  width: auto;
+  height: 130px;
 }
 
 p {
