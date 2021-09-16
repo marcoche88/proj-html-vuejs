@@ -88,6 +88,42 @@
         </div>
       </div>
     </section>
+
+    <!-- section get start free-->
+    <section id="start-free" class="my-5">
+      <div class="my-container container">
+        <div class="row">
+          <div class="col-6">
+            <div class="p-5">
+              <p class="text-uppercase">Why hesitate to register?</p>
+              <h2>
+                Learn At Your <br />Own
+                <span class="fw-light">Pace</span>
+              </h2>
+              <ul>
+                <li>Select & customize courses to your preferences</li>
+                <li>Change the tutor and make arrangements</li>
+                <li>Partecipate in events to join others</li>
+                <li>Get the desired certificate delivered at house</li>
+              </ul>
+              <Button>Get started for free</Button>
+            </div>
+          </div>
+          <div class="col-6 position-relative">
+            <img
+              src="../assets/images/home-5-image-01.png"
+              class="p-5"
+              alt="about"
+            />
+            <img
+              src="../assets/images/underlay-shape-grey.svg"
+              alt="underlay"
+              class="underlay position-absolute"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 </template>
 
@@ -251,7 +287,8 @@ export default {
 
 // section coding language and courses
 #coding-languages,
-#courses {
+#courses,
+#start-free {
   p {
     font-size: 11px;
     color: $text-secondary-color;
@@ -268,7 +305,7 @@ export default {
 #max-coach {
   .underlay {
     width: 380px;
-    right: 40%;
+    right: 30%;
     bottom: 15%;
     z-index: -1;
   }
@@ -293,6 +330,24 @@ export default {
   }
   p {
     font-size: 11px;
+  }
+}
+
+// section start-free
+#start-free {
+  ul {
+    padding-left: 1rem;
+    li {
+      font-size: 11px;
+      color: $text-secondary-color;
+      line-height: 25px;
+    }
+  }
+  .underlay {
+    width: 380px;
+    right: 30%;
+    bottom: 15%;
+    z-index: -1;
   }
 }
 </style>
