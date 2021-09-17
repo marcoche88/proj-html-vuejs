@@ -177,7 +177,7 @@
                 <span class="fw-light">mobile</span>
                 anytime!
               </h2>
-              <p class="my-4">
+              <p class="my-4 subtitle-section">
                 Save lessons for later and revise or write notes at any time and
                 on multiple devices on your way. Never interfere with activities
                 of enjoyment or other precious moments.
@@ -481,7 +481,7 @@ export default {
           place: "Dubai",
           title: "How meditation improve your mental health?",
           date: {
-            day: "22",
+            day: "12",
             month: "AUG",
           },
         },
