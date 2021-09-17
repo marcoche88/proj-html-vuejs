@@ -20,8 +20,8 @@
         </div>
       </div>
     </div>
-    <div class="arrow-up position-absolute pointer">
-      <i class="bi bi-arrow-up-circle-fill"></i>
+    <div class="arrow-up position-absolute">
+      <a href="#header"><i class="bi bi-arrow-up-circle-fill"></i></a>
     </div>
   </footer>
 </template>
@@ -94,8 +94,11 @@ footer {
   right: 15px;
   font-size: 40px;
   color: $text-primary-color;
-  i {
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
+  a {
+    display: block;
+    i {
+      text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
+    }
   }
 }
 </style>

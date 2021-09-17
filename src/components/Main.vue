@@ -1,5 +1,23 @@
 <template>
   <main>
+    <!-- menu right fixed -->
+    <section
+      id="menu-right"
+      class="
+        d-flex
+        flex-column
+        align-items-center
+        position-fixed
+        rounded-2
+        shadow
+      "
+    >
+      <i class="fas fa-ruler-combined p-2 pointer"></i>
+      <i class="fas fa-info-circle p-2 pointer"></i>
+      <i class="fas fa-book p-2 pointer"></i>
+      <i class="fas fa-shopping-cart p-2 pointer"></i>
+    </section>
+
     <!-- jumbotron -->
     <MainHero />
 
@@ -496,6 +514,15 @@ export default {
 
 <style scoped lang="scss">
 @import "../scss/_vars.scss";
+
+// menu right fixed
+#menu-right {
+  background-color: white;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 1;
+}
 
 // section numbers
 #numbers {

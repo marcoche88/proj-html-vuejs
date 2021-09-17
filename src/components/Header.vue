@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header id="header">
     <nav class="my-container container h-100">
       <div class="row align-items-center h-100">
         <!-- navbar-left logo -->
