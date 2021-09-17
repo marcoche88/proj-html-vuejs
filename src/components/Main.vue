@@ -23,15 +23,9 @@
       <div class="my-container container">
         <div class="row">
           <div class="col-6 position-relative">
-            <img
-              src="../assets/images/about-us-03-image-01.png"
-              class="p-5"
-              alt="about"
-            />
-            <img
-              src="../assets/images/underlay-shape-lilla.svg"
-              alt="underlay"
-              class="underlay position-absolute"
+            <ImageShape
+              image="about-us-03-image-01.png"
+              shape="underlay-shape-lilla.svg"
             />
           </div>
           <div class="col-6">
@@ -87,6 +81,7 @@
           <Button> View all courses <i class="fas fa-arrow-right"></i></Button>
         </div>
       </div>
+      <div class="curved"></div>
     </section>
 
     <!-- section get start free-->
@@ -100,7 +95,7 @@
                 Learn At Your <br />Own
                 <span class="fw-light">Pace</span>
               </h2>
-              <ul>
+              <ul class="mb-4">
                 <li>Select & customize courses to your preferences</li>
                 <li>Change the tutor and make arrangements</li>
                 <li>Partecipate in events to join others</li>
@@ -110,16 +105,59 @@
             </div>
           </div>
           <div class="col-6 position-relative">
-            <img
-              src="../assets/images/home-5-image-01.png"
-              class="p-5"
-              alt="about"
-            />
-            <img
-              src="../assets/images/underlay-shape-grey.svg"
-              alt="underlay"
-              class="underlay position-absolute"
-            />
+            <ImageShape
+              image="home-5-image-01.png"
+              shape="underlay-shape-grey.svg"
+            >
+              <img
+                src="../assets/images/maxcoach-shape-05-150x150.png"
+                alt="shape"
+                class="shape position-absolute"
+              />
+            </ImageShape>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- section mobile app -->
+    <section id="mobile-app" class="my-5">
+      <div class="my-container container">
+        <div class="row">
+          <div class="col-6 position-relative">
+            <ImageShape
+              image="home-5-image-02.png"
+              shape="underlay-shape-grey.svg"
+            >
+              <img
+                src="../assets/images/maxcoach-shape-07-150x150.png"
+                alt="shape"
+                class="shape position-absolute"
+              />
+              <img
+                src="../assets/images/maxcoach-shape-01.png"
+                alt="linear-shape"
+                class="linear-shape position-absolute"
+              />
+            </ImageShape>
+
+            <i class="far fa-circle fa-3x position-absolute"></i>
+          </div>
+          <div class="col-6 align-self-center">
+            <div class="p-5">
+              <p class="text-uppercase">What are you looking for?</p>
+              <h2>
+                Learn on your
+                <span class="fw-light">mobile</span>
+                anytime!
+              </h2>
+              <p class="my-4">
+                Save lessons for later and revise or write notes at any time and
+                on multiple devices on your way. Never interfere with activities
+                of enjoyment or other precious moments.
+              </p>
+              <Button>Download Our App</Button>
+            </div>
           </div>
         </div>
       </div>
@@ -133,6 +171,7 @@ import Box from "./main/Box.vue";
 import CardVertical from "./main/CardVertical.vue";
 import Card from "./main/Card.vue";
 import Button from "./main/Button.vue";
+import ImageShape from "./main/ImageShape.vue";
 export default {
   name: "Main",
   components: {
@@ -141,6 +180,7 @@ export default {
     CardVertical,
     Card,
     Button,
+    ImageShape,
   },
   data() {
     return {
@@ -303,12 +343,6 @@ export default {
 
 // section maxcoach
 #max-coach {
-  .underlay {
-    width: 380px;
-    right: 30%;
-    bottom: 15%;
-    z-index: -1;
-  }
   p {
     font-size: 11px;
     color: $text-secondary-color;
@@ -333,6 +367,17 @@ export default {
   }
 }
 
+// section courses
+#courses {
+  .curved {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(white, $bg-primary-color);
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+  }
+}
+
 // section start-free
 #start-free {
   ul {
@@ -343,11 +388,26 @@ export default {
       line-height: 25px;
     }
   }
-  .underlay {
-    width: 380px;
-    right: 30%;
-    bottom: 15%;
-    z-index: -1;
+}
+
+// section mobile app
+#mobile-app {
+  i {
+    font-size: 45px;
+    color: #de912a;
+    opacity: 0.5;
+    top: 20%;
+    right: 0;
+  }
+  h2 {
+    color: $text-tertiary-color;
+    span {
+      color: $text-primary-color;
+    }
+  }
+  p {
+    font-size: 11px;
+    color: $text-secondary-color;
   }
 }
 </style>
