@@ -198,8 +198,8 @@
       </div>
     </section>
 
-    <!-- testimonial section -->
-    <section id="testimonial" class="my-5">
+    <!-- section testimonial -->
+    <section id="testimonial" class="mt-5 pb-5">
       <div class="title-testimonial pt-5">
         <p class="text-center text-uppercase subtitle-section">
           People are praising maxcoach
@@ -235,6 +235,27 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- section start now -->
+    <section id="start-now" class="mb-5 pb-5 text-center position-relative">
+      <p class="title-section fw-bold fs-5 my-0">
+        Start today for getting
+        <span class="fw-normal">Online Certification</span>
+      </p>
+      <h3 class="mb-4">You can be your own guiding star with our help!</h3>
+      <Button>Get started now</Button>
+      <img
+        src="../assets/images/maxcoach-shape-02.png"
+        class="circle-shape position-absolute"
+        alt="shape circle"
+      />
+      <img
+        src="../assets/images/maxcoach-shape-01.png"
+        class="linear-shape position-absolute"
+        alt="shape linear"
+      />
+      <i class="far fa-circle fa-3x position-absolute"></i>
     </section>
   </main>
 </template>
@@ -543,7 +564,7 @@ export default {
 
 // section testimonial
 #testimonial {
-  background-color: #f0efef;
+  background-color: $bg-primary-color;
   .circle {
     padding: 4px;
     border-radius: 50%;
@@ -553,6 +574,29 @@ export default {
       background-color: black;
       padding: 5px;
     }
+  }
+}
+
+// section start now
+#start-now {
+  background-color: $bg-primary-color;
+  h3 {
+    color: $text-tertiary-color;
+  }
+  i {
+    font-size: 45px;
+    color: #a08778;
+    opacity: 0.4;
+    top: 7%;
+    left: 18%;
+  }
+  .linear-shape {
+    top: 35%;
+    left: 18%;
+  }
+  .circle-shape {
+    top: 12%;
+    right: 15%;
   }
 }
 </style>
