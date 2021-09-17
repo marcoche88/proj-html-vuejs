@@ -20,7 +20,7 @@
         </div>
       </div>
     </div>
-    <div class="arrow-up position-absolute">
+    <div class="arrow-up position-absolute pointer">
       <i class="bi bi-arrow-up-circle-fill"></i>
     </div>
   </footer>

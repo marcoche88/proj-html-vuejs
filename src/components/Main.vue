@@ -162,6 +162,26 @@
         </div>
       </div>
     </section>
+
+    <!-- section events -->
+    <section id="events" class="my-5">
+      <p class="text-center text-uppercase">Get in contact now</p>
+      <h2 class="text-center">Upcoming <span class="fw-light">Events</span></h2>
+      <div class="my-container container my-5">
+        <div class="row g-4">
+          <div class="col-6" v-for="(event, index) in events" :key="index">
+            <CardEvent :event="event" />
+          </div>
+        </div>
+      </div>
+      <p class="text-center">
+        Excited about our event?
+        <a href="#">
+          <span>View all events </span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </p>
+    </section>
   </main>
 </template>
 
@@ -172,6 +192,8 @@ import CardVertical from "./main/CardVertical.vue";
 import Card from "./main/Card.vue";
 import Button from "./main/Button.vue";
 import ImageShape from "./main/ImageShape.vue";
+import CardEvent from "./main/CardEvent.vue";
+
 export default {
   name: "Main",
   components: {
@@ -181,6 +203,7 @@ export default {
     Card,
     Button,
     ImageShape,
+    CardEvent,
   },
   data() {
     return {
@@ -317,6 +340,57 @@ export default {
           students: 76,
         },
       ],
+      // section events
+      events: [
+        {
+          place: "Texas, US",
+          title: "Storytelling Workshop",
+          date: {
+            day: "22",
+            month: "NOV",
+          },
+        },
+        {
+          place: "New York, US",
+          title: "Painting Art Contest 2020",
+          date: {
+            day: "10",
+            month: "OCT",
+          },
+        },
+        {
+          place: "Hamburg, Germany",
+          title: "International Art Fair 2020",
+          date: {
+            day: "23",
+            month: "NOV",
+          },
+        },
+        {
+          place: "Illinois, US",
+          title: "Street Performance: Call for Artist",
+          date: {
+            day: "15",
+            month: "DEC",
+          },
+        },
+        {
+          place: "Illinois, US",
+          title: "Consumer Food Safety Education Conference",
+          date: {
+            day: "22",
+            month: "JUL",
+          },
+        },
+        {
+          place: "Dubai",
+          title: "How meditation improve your mental health?",
+          date: {
+            day: "22",
+            month: "AUG",
+          },
+        },
+      ],
     };
   },
 };
@@ -325,24 +399,13 @@ export default {
 <style scoped lang="scss">
 @import "../scss/_vars.scss";
 
-// section coding language and courses
+// section coding language, courses, events
 #coding-languages,
+#max-coach,
 #courses,
-#start-free {
-  p {
-    font-size: 11px;
-    color: $text-secondary-color;
-  }
-  h2 {
-    color: $text-tertiary-color;
-    span {
-      color: $text-primary-color;
-    }
-  }
-}
-
-// section maxcoach
-#max-coach {
+#start-free,
+#events,
+#mobile-app {
   p {
     font-size: 11px;
     color: $text-secondary-color;
@@ -370,11 +433,9 @@ export default {
 // section courses
 #courses {
   .curved {
-    width: 100%;
-    height: 200px;
+    height: 150px;
     background: linear-gradient(white, $bg-primary-color);
-    border-bottom-left-radius: 100%;
-    border-bottom-right-radius: 100%;
+    clip-path: ellipse(60% 100% at 50% 0%);
   }
 }
 
@@ -399,15 +460,13 @@ export default {
     top: 20%;
     right: 0;
   }
-  h2 {
-    color: $text-tertiary-color;
-    span {
-      color: $text-primary-color;
-    }
-  }
-  p {
-    font-size: 11px;
-    color: $text-secondary-color;
+}
+
+#events {
+  a {
+    text-decoration: none;
+    color: $text-primary-color;
+    font-weight: bold;
   }
 }
 </style>
