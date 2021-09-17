@@ -5,3 +5,15 @@
 .pointer {
     cursor: pointer;
 }
+
+.subtitle-section {
+    font-size: 11px;
+    color: $text-secondary-color;
+}
+
+.title-section {
+    color: $text-tertiary-color;
+    span {
+        color: $text-primary-color;
+    }
+}

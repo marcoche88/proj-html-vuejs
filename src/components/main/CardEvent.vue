@@ -1,7 +1,7 @@
 <template>
   <div class="container event-info">
     <div class="row justify-content-between py-4">
-      <div class="col-6 ps-4">
+      <div class="col-8 ps-4">
         <div class="event-place mb-1">
           <i class="far fa-user"></i> {{ event.place }}
         </div>

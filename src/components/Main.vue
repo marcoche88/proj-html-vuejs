@@ -5,8 +5,10 @@
 
     <!-- section coding language -->
     <section id="coding-languages" class="my-5">
-      <p class="text-center text-uppercase">Start learning coding languages</p>
-      <h2 class="text-center">
+      <p class="text-center text-uppercase subtitle-section">
+        Start learning coding languages
+      </p>
+      <h2 class="text-center title-section">
         Build Your Dream <span class="text-uppercase fw-light">today</span>
       </h2>
       <div class="my-container container mt-5">
@@ -30,10 +32,10 @@
           </div>
           <div class="col-6">
             <div class="p-5">
-              <p class="text-uppercase">
+              <p class="text-uppercase subtitle-section">
                 Dream with <span class="fw-bold">maxcoach</span>
               </p>
-              <h2 class="mt-2 mb-5">
+              <h2 class="mt-2 mb-5 title-section">
                 Construct A
                 <span class="fw-light">Stunning</span>
                 Career Perspective
@@ -50,7 +52,7 @@
     </section>
 
     <!-- section numbers -->
-    <section id="numbers">
+    <section id="numbers" class="my-5">
       <div class="my-container container py-5">
         <div class="row align-items-center">
           <div
@@ -67,9 +69,11 @@
 
     <!-- section courses -->
     <section id="courses" class="my-5">
-      <p class="text-center text-uppercase">Choose where you'd like to begin</p>
-      <h2 class="text-center">
-        Latest Featured <span class="text-uppercase fw-light">courses</span>
+      <p class="text-center text-uppercase subtitle-section">
+        Choose where you'd like to begin
+      </p>
+      <h2 class="text-center title-section">
+        Latest Featured <span class="fw-light">courses</span>
       </h2>
       <div class="my-container container mt-5">
         <div class="row">
@@ -90,8 +94,10 @@
         <div class="row">
           <div class="col-6">
             <div class="p-5">
-              <p class="text-uppercase">Why hesitate to register?</p>
-              <h2>
+              <p class="text-uppercase subtitle-section">
+                Why hesitate to register?
+              </p>
+              <h2 class="title-section">
                 Learn At Your <br />Own
                 <span class="fw-light">Pace</span>
               </h2>
@@ -145,8 +151,10 @@
           </div>
           <div class="col-6 align-self-center">
             <div class="p-5">
-              <p class="text-uppercase">What are you looking for?</p>
-              <h2>
+              <p class="text-uppercase subtitle-section">
+                What are you looking for?
+              </p>
+              <h2 class="title-section">
                 Learn on your
                 <span class="fw-light">mobile</span>
                 anytime!
@@ -164,9 +172,13 @@
     </section>
 
     <!-- section events -->
-    <section id="events" class="my-5">
-      <p class="text-center text-uppercase">Get in contact now</p>
-      <h2 class="text-center">Upcoming <span class="fw-light">Events</span></h2>
+    <section id="events" class="my-5 position-relative">
+      <p class="text-center text-uppercase subtitle-section">
+        Get in contact now
+      </p>
+      <h2 class="text-center title-section">
+        Upcoming <span class="fw-light">Events</span>
+      </h2>
       <div class="my-container container my-5">
         <div class="row g-4">
           <div class="col-6" v-for="(event, index) in events" :key="index">
@@ -174,13 +186,55 @@
           </div>
         </div>
       </div>
-      <p class="text-center">
+      <p class="text-center subtitle-section m-0">
         Excited about our event?
         <a href="#">
           <span>View all events </span>
           <i class="fas fa-arrow-right"></i>
         </a>
       </p>
+      <div class="layer-container position-absolute">
+        <div class="layer"></div>
+      </div>
+    </section>
+
+    <!-- testimonial section -->
+    <section id="testimonial" class="my-5">
+      <div class="title-testimonial pt-5">
+        <p class="text-center text-uppercase subtitle-section">
+          People are praising maxcoach
+        </p>
+        <h2 class="text-center title-section">
+          What make they <span class="fw-light">love us?</span>
+        </h2>
+        <div class="slider py-5">
+          <div class="my-container container">
+            <div class="row g-5">
+              <div
+                class="col-4"
+                v-for="(testimonial, index) in testimonials"
+                :key="index"
+              >
+                <CardTestimonial :testimonial="testimonial" />
+              </div>
+            </div>
+          </div>
+          <div
+            class="
+              slider-circle
+              d-flex
+              align-items-center
+              justify-content-center
+              pt-5
+            "
+          >
+            <div class="circle active pointer"></div>
+            <div class="circle pointer"></div>
+            <div class="circle pointer"></div>
+            <div class="circle pointer"></div>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 </template>
@@ -193,6 +247,7 @@ import Card from "./main/Card.vue";
 import Button from "./main/Button.vue";
 import ImageShape from "./main/ImageShape.vue";
 import CardEvent from "./main/CardEvent.vue";
+import CardTestimonial from "./main/CardTestimonial.vue";
 
 export default {
   name: "Main",
@@ -204,6 +259,7 @@ export default {
     Button,
     ImageShape,
     CardEvent,
+    CardTestimonial,
   },
   data() {
     return {
@@ -391,6 +447,27 @@ export default {
           },
         },
       ],
+      // section testimonial
+      testimonials: [
+        {
+          img: "02",
+          post: "I am free to learn at my own pace, follow my own schedule and choose the subject I like. Great study portal for people like me.",
+          name: "Mina Hollace",
+          job: "/ Freelancer",
+        },
+        {
+          img: "04",
+          post: "MaxCoach is my best choice. Their tutors are smart and professional when dealing with students.",
+          name: "Madley Pondor",
+          job: "/ IT Specialist",
+        },
+        {
+          img: "01",
+          post: "I am happy with their arrangement of lessons and subjects. They reflect a scientific investigation.",
+          name: "Luvic Dubble",
+          job: "/ Private Tutor",
+        },
+      ],
     };
   },
 };
@@ -398,25 +475,6 @@ export default {
 
 <style scoped lang="scss">
 @import "../scss/_vars.scss";
-
-// section coding language, courses, events
-#coding-languages,
-#max-coach,
-#courses,
-#start-free,
-#events,
-#mobile-app {
-  p {
-    font-size: 11px;
-    color: $text-secondary-color;
-  }
-  h2 {
-    color: $text-tertiary-color;
-    span {
-      color: $text-primary-color;
-    }
-  }
-}
 
 // section numbers
 #numbers {
@@ -462,11 +520,39 @@ export default {
   }
 }
 
+// section events
 #events {
+  .layer-container {
+    background-color: $bg-primary-color;
+    top: 60%;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  }
+  .layer {
+    background-color: white;
+    height: 360px;
+    border-radius: 0% 100% 77% 23% / 100% 0% 100% 0%;
+  }
   a {
     text-decoration: none;
     color: $text-primary-color;
     font-weight: bold;
+  }
+}
+
+// section testimonial
+#testimonial {
+  background-color: #f0efef;
+  .circle {
+    padding: 4px;
+    border-radius: 50%;
+    margin: 0 10px;
+    background-color: $text-secondary-color;
+    &.active {
+      background-color: black;
+      padding: 5px;
+    }
   }
 }
 </style>
